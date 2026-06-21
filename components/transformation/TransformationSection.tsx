@@ -1,8 +1,16 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Utensils, Stethoscope, ShoppingBag, Briefcase } from "lucide-react";
 import { TRANSFORMATIONS } from "@/lib/content";
 import { useInView } from "@/lib/utils";
+
+const TAB_ICONS: Record<string, React.ElementType> = {
+  restaurant: Utensils,
+  clinic: Stethoscope,
+  shop: ShoppingBag,
+  services: Briefcase,
+};
 
 export default function TransformationSection() {
   const [activeId, setActiveId] = useState(TRANSFORMATIONS[0].id);
@@ -31,14 +39,18 @@ export default function TransformationSection() {
         {/* Business type tabs */}
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.3 }}
           className="flex flex-wrap gap-3 mb-10">
-          {TRANSFORMATIONS.map((b) => (
-            <button key={b.id} onClick={() => setActiveId(b.id)}
-              className={`rounded-2xl px-5 py-2.5 text-sm font-bold transition-all duration-300 border ${
-                b.id === activeId ? "bg-gold text-canvas border-gold shadow-gold-sm" : "bg-surface border-border text-text-muted hover:border-border-bright hover:text-text-secondary"
-              }`}>
-              {b.emoji} {b.label}
-            </button>
-          ))}
+          {TRANSFORMATIONS.map((b) => {
+            const Icon = TAB_ICONS[b.id];
+            return (
+              <button key={b.id} onClick={() => setActiveId(b.id)}
+                className={`flex items-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-bold transition-all duration-300 border ${
+                  b.id === activeId ? "bg-gold text-canvas border-gold shadow-gold-sm" : "bg-surface border-border text-text-muted hover:border-border-bright hover:text-text-secondary"
+                }`}>
+                {Icon && <Icon size={16} className="shrink-0" />}
+                {b.label}
+              </button>
+            );
+          })}
         </motion.div>
 
         <AnimatePresence mode="wait">

@@ -4,7 +4,6 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useIsMobile } from "@/lib/utils";
-import { SITE } from "@/lib/content";
 
 const PATH_D = "M -50,200 C 150,120 300,320 500,180 S 750,80 900,240 S 1150,400 1400,200 S 1700,60 1920,280";
 const PATH_LENGTH = 2200;
@@ -143,7 +142,7 @@ export default function HeroSection() {
           d={PATH_D} fill="none" stroke="url(#path-gradient)" strokeWidth={2.5}
           filter="url(#path-glow)" strokeDasharray={PATH_LENGTH}
           animate={{ strokeDashoffset: PATH_LENGTH * (1 - pathProgress) }}
-          transition={{ type: "spring", stiffness: 30, damping: 20 }}
+          transition={{ type: "spring", stiffness: 200, damping: 30 }}
         />
 
         {mounted && <PathParticle progress={pathProgress} pathRef={pathRef} />}
@@ -156,18 +155,7 @@ export default function HeroSection() {
       <StatBadge label="Uptime SLA" value="99.9%" delay={1.6} className="top-[30%] right-[10%]" />
 
       {/* Hero content */}
-      <div className="relative z-20 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-          <span className="font-mono text-label text-gold uppercase tracking-wider">{SITE.availability}</span>
-        </motion.div>
-
+      <div className="relative z-20 max-w-5xl mx-auto px-6 pt-24 text-center flex flex-col items-center">
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -222,28 +210,6 @@ export default function HeroSection() {
           >
             Start a conversation
           </a>
-        </motion.div>
-
-        {/* Social proof */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
-          className="mt-12 flex flex-col sm:flex-row items-center gap-4 text-sm text-text-muted"
-        >
-          <div className="flex -space-x-2">
-            {["#C9A96E", "#7B9E87", "#D4956A", "#A88050", "#5A7A65"].map((color, i) => (
-              <div key={i} className="w-8 h-8 rounded-full border-2 border-canvas flex items-center justify-center text-[10px] font-bold"
-                style={{ backgroundColor: color + "33", borderColor: color + "60", color }}>
-                {String.fromCharCode(65 + i)}
-              </div>
-            ))}
-          </div>
-          <span>
-            Trusted by{" "}
-            <span className="text-text-primary font-semibold">80+ businesses</span>
-            {" "}— retail, clinics, restaurants, logistics & more
-          </span>
         </motion.div>
 
         {/* Tagline badges */}

@@ -1,8 +1,8 @@
 import Navigation from "@/components/ui/Navigation";
 import HeroSection from "@/components/hero/HeroSection";
-import CaseStudySection from "@/components/case-study/CaseStudySection";
+// import CaseStudySection from "@/components/case-study/CaseStudySection";
 import TransformationSection from "@/components/transformation/TransformationSection";
-import ProjectStoriesSection from "@/components/project-stories/ProjectStoriesSection";
+// import ProjectStoriesSection from "@/components/project-stories/ProjectStoriesSection";
 import TrustGridSection from "@/components/trust-grid/TrustGridSection";
 import PlaygroundSection from "@/components/playground/PlaygroundSection";
 import JourneySection from "@/components/journey/JourneySection";
@@ -14,9 +14,9 @@ export default function HomePage() {
     <main className="min-h-screen bg-canvas">
       <Navigation />
       <HeroSection />
-      <CaseStudySection />
+      {/* <CaseStudySection /> */}
       <TransformationSection />
-      <ProjectStoriesSection />
+      {/* <ProjectStoriesSection /> */}
       <TrustGridSection />
       <PlaygroundSection />
       <JourneySection />

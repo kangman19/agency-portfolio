@@ -32,8 +32,8 @@ export const TRANSFORMATIONS: BusinessType[] = [
   },
   {
     id: "clinic", label: "Clinic", emoji: "🩺",
-    before: "Appointments in a paper diary. Patients forget. Reception spends mornings untangling double-bookings.",
-    after: "One calendar everyone trusts. Patients get a friendly text the day before. Reports appear monthly, on their own.",
+    before: "Appointments in a paper diary. Patients forget. Reception spends mornings untangling double-bookings. Patients calling incessantly just to ask if the doctor is in. Appointment slots overlapping, leading to a packed, frustrated waiting room.",
+    after: "One calendar everyone trusts. Patients get a friendly text the day before. Reports appear monthly, on their own. Automated digital scheduling. Patients book their exact time slot online, reducing waiting room friction and keeping staff focused on care.",
     metrics: [
       { label: "Missed appointments", before: "30%", after: "17%", good: "Reminder texts that work" },
       { label: "Admin time", before: "Half the day", after: "Under an hour", good: "Reception does reception" },

@@ -77,11 +77,15 @@ function ScoreBar({ label, score, color }: { label: string; score: number; color
   );
 }
 
+const UPTIME_DAYS = Array.from({ length: 60 }, (_, i) => ({
+  status: (i === 14 || i === 41) ? "incident" : "up" as "up" | "incident",
+  day: i,
+}));
+
 function UptimeGrid() {
-  const days = Array.from({ length: 60 }, (_, i) => ({ status: Math.random() > 0.02 ? "up" : "incident", day: i }));
   return (
     <div className="flex flex-wrap gap-1 mt-2">
-      {days.map((d) => (
+      {UPTIME_DAYS.map((d) => (
         <div key={d.day} className={`w-2 h-2 rounded-sm ${d.status === "up" ? "bg-sage/60" : "bg-red-500/60"}`} />
       ))}
       <div className="w-full mt-2 flex items-center justify-between">
