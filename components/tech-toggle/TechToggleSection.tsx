@@ -167,7 +167,7 @@ function GeekView({ snippetKey }: { snippetKey: string }) {
           <div className="w-3 h-3 rounded-full bg-[#28C840]" />
         </div>
         <div className="flex-1 text-center font-mono text-xs text-text-muted">
-          nexus-Agency / {snippetKey}.ts
+          Astral-Agency / {snippetKey}.ts
         </div>
         <Terminal size={12} className="text-teal" />
       </div>

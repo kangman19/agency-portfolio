@@ -161,55 +161,21 @@ export default function TrustGridSection() {
           <BentoCard icon={Clock} title="Always Online, Never Down" description="We deploy on enterprise-grade infrastructure with redundancy built in. If something breaks at 3am, our monitoring alerts us, not you." accentColor="sage" tag="99.9% SLA" delay={0.3} inView={inView}><UptimeGrid /></BentoCard>
           <BentoCard icon={BarChart3} title="Automated Growth Tools" description="Built-in SEO, analytics dashboards, and conversion tracking, all configured and explained in plain language. Know exactly how your site is performing every day." accentColor="gold" size="wide" delay={0.4} inView={inView}><GrowthSparkline /></BentoCard>
           <BentoCard icon={HeartHandshake} title="Human Support, Always" description="You'll always reach a real person, not a chatbot. WhatsApp, email, or phone. We're your long-term tech partner, not just a one-time vendor." accentColor="amber" tag="Local Team" delay={0.5} inView={inView} />
-          <BentoCard icon={Globe} title="Global Speed, Local Heart" description="CDN-powered delivery means your site loads fast for customers in Nairobi, Mombasa, Kampala, or London, under 500ms everywhere." accentColor="sage" delay={0.6} inView={inView}>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {["Nairobi", "Mombasa", "Kampala", "London", "Dubai"].map((city) => (
-                <div key={city} className="flex items-center gap-1.5 bg-sage/5 border border-sage/15 rounded-lg px-2.5 py-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse" />
-                  <span className="text-[10px] font-mono text-text-secondary">{city}</span>
-                </div>
-              ))}
-            </div>
-          </BentoCard>
+          <BentoCard icon={Globe} title="Blazing Fast Load Times" description="Every millisecond your site takes to load costs you customers. We optimize your code and assets so your pages load instantly on any mobile network in Nairobi." accentColor="sage" delay={0.6} inView={inView} />
 
           {/* Tech stack */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.7 }}
-            className="lg:col-span-2 bg-surface border border-border rounded-3xl p-6 bento-border">
+            className="lg:col-span-3 bg-surface border border-border rounded-3xl p-6 bento-border">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 rounded-2xl bg-amber/10 border border-amber/20"><Cpu size={20} className="text-amber" /></div>
               <div>
                 <h3 className="font-bold text-text-primary">Enterprise Tech Stack</h3>
-                <p className="text-sm text-text-muted">The same tools used by Airbnb, Netflix & Shopify, now for your business.</p>
+                <p className="text-sm text-text-muted">Modern, secure development tools built for speed and reliability.</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["Next.js", "React", "TypeScript", "PostgreSQL", "Redis", "Vercel", "Stripe", "Cloudflare", "AWS S3", "SendGrid", "Sentry", "Docker"].map((tech) => (
+              {["Next.js", "React", "TypeScript", "Firebase", "Redis", "Vercel", "Paystack for mpesa/card payments", "Cloudflare", "Docker"].map((tech) => (
                 <span key={tech} className="px-3 py-1.5 bg-surface-2 border border-border rounded-xl text-xs font-mono text-text-secondary hover:border-gold/30 hover:text-gold transition-colors duration-200 cursor-default">{tech}</span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Timeline */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.75 }}
-            className="bg-surface border border-border rounded-3xl p-6 bento-border">
-            <div className="flex items-center gap-2 mb-4">
-              <Clock size={16} className="text-gold" />
-              <span className="text-sm font-bold text-text-primary">Typical Timeline</span>
-            </div>
-            <div className="space-y-3">
-              {[
-                { week: "Week 1", task: "Discovery & Design", done: true },
-                { week: "Week 2–3", task: "Development", done: true },
-                { week: "Week 4", task: "Testing & Launch", done: true },
-                { week: "Week 5+", task: "Growth & Support", done: false },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className={`w-2 h-2 rounded-full shrink-0 ${item.done ? "bg-gold" : "bg-border-bright"}`} />
-                  <div className="flex-1 flex justify-between text-xs">
-                    <span className="font-mono text-text-muted">{item.week}</span>
-                    <span className={item.done ? "text-text-secondary" : "text-text-muted"}>{item.task}</span>
-                  </div>
-                </div>
               ))}
             </div>
           </motion.div>

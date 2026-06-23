@@ -55,7 +55,7 @@ export default function ContactSection() {
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-gold/4 blur-3xl pointer-events-none" />
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.3fr]">
             <div>
-              <p className="font-mono text-label text-text-muted uppercase tracking-widest mb-2">What working with us feels like</p>
+              <p className="font-mono text-label text-text-muted uppercase tracking-widest mb-2">Development Phase — Starting Week 2</p>
               <h3 className="text-display-md font-extrabold text-text-primary">A typical week, once we're building</h3>
               <p className="mt-4 text-text-secondary">No mystery, no silence, no "we'll circle back". Just a steady rhythm you can set your watch by.</p>
               <p className="mt-6 font-bold text-gold">{SITE.founderName}, founder</p>

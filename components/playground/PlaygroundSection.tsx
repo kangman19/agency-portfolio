@@ -135,6 +135,15 @@ function MockupAfter() {
         </div>
         <div className="rounded bg-green-50 px-1.5 py-0.5 font-mono text-[9px] text-green-600 border border-green-200">0.4s</div>
       </div>
+      {/* Site navbar */}
+      <div className="flex items-center justify-between border-b border-slate-100 bg-white px-4 py-2">
+        <div className="text-[9px] font-bold tracking-tight text-slate-900">mybusiness</div>
+        <div className="flex items-center gap-3">
+          {["Home", "About", "Our Services"].map((item) => (
+            <span key={item} className="text-[8px] font-medium text-slate-500">{item}</span>
+          ))}
+        </div>
+      </div>
       {/* Hero section */}
       <div className="border-b border-slate-100/80 bg-[#fafaf9] px-4 py-5">
         {/* Premium badge — transparent, editorial */}

@@ -5,8 +5,8 @@
 export const SITE = {
   name: "Astral Agency",
   shortName: "Astral Agency",
-  email: "hello@Astral.Agency",
-  phone: "+254 700 000 000",
+  email: "kangetheian19@gmail.com",
+  phone: "+254 716 777 633",
   founderName: "Ian Kangethe",
   founderFirst: "Kangethe",
   location: "Nairobi, Kenya, working with businesses everywhere",
@@ -130,6 +130,6 @@ export const PROMISES: Promise_[] = [
 export const COMMS_WEEK = [
   { day: "Mon", what: "We plan the week and share what's coming" },
   { day: "Tue–Thu", what: "Heads-down building, questions answered same day" },
-  { day: "Fri", what: "Your weekly preview link + a 2-line summary" },
+  { day: "Fri", what: "Your weekly preview link" },
   { day: "Anytime", what: "One WhatsApp/email thread, straight to a human" },
 ];
