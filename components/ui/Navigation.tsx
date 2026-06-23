@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -48,13 +49,14 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="relative w-8 h-8 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-lg bg-gold/10 border border-gold/30 group-hover:border-gold/60 transition-colors duration-300" />
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="relative z-10">
-                  <path d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z" stroke="#C9A96E" strokeWidth="1.5" fill="none"/>
-                  <circle cx="8" cy="8" r="2" fill="#C9A96E"/>
-                </svg>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Astral Agency"
+                width={32}
+                height={32}
+                className="rounded-lg"
+                priority
+              />
               <span className="font-bold text-text-primary tracking-tight">
                 Astral<span className="text-gold">.</span>
               </span>
