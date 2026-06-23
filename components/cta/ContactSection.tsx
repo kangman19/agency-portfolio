@@ -86,7 +86,7 @@ export default function ContactSection() {
             </motion.h2>
             <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}
               className="text-body-lg text-text-secondary mb-8 leading-relaxed">
-              One email or WhatsApp message is enough to start. You'll hear back from {SITE.founderFirst}, the actual founder, within one working day.
+              One email or WhatsApp message is enough to start. You'll hear back from {SITE.founderFirst}, the founder, within one working day.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.3 }} className="space-y-4">
               {[

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navigation from "@/components/ui/Navigation";
+import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Astral Agency: Websites & Digital Systems for Growing Businesses",
@@ -9,7 +11,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body>{children}</body>
+      <body className="bg-canvas">
+        <Navigation />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
