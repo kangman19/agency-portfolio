@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { SITE } from "@/lib/content";
 
@@ -6,7 +7,7 @@ export default function Footer() {
     <footer className="bg-[#07070800] border-t border-border" style={{ background: "#070708" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="py-14">
-          <a href="#" className="flex items-center gap-2.5 mb-4 group w-fit">
+          <Link href="/" className="flex items-center gap-2.5 mb-4 group w-fit">
             <Image
               src="/logo.png"
               alt="Astral Agency"
@@ -15,7 +16,7 @@ export default function Footer() {
               className="rounded-lg"
             />
             <span className="font-bold text-lg text-text-primary">{SITE.shortName}<span className="text-gold">.</span></span>
-          </a>
+          </Link>
           <p className="text-sm text-text-muted leading-relaxed max-w-xs">
             Websites and digital systems for businesses that are going places, across East Africa and beyond.
           </p>

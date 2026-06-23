@@ -4,27 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const navLinks: { label: string; href: string; prefetch?: boolean }[] = [
-  // { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "/about", prefetch: true },
+const navLinks: { label: string; href: string }[] = [
+  { label: "Services", href: "/services" },
+  { label: "Process", href: "/process" },
+  { label: "About", href: "/about" },
 ];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
-
-  // Hash-only links need to be prefixed with "/" when not on the homepage
-  // so the browser navigates to the homepage first, then scrolls to the section.
-  const resolveHref = (href: string) =>
-    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
-
-  const contactHref = resolveHref("#contact");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -67,8 +57,8 @@ export default function Navigation() {
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
-                  href={resolveHref(link.href)}
-                  prefetch={link.prefetch}
+                  href={link.href}
+                  prefetch
                   className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200 relative group"
                 >
                   {link.label}
@@ -80,7 +70,8 @@ export default function Navigation() {
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
               <Link
-                href={contactHref}
+                href="/contact"
+                prefetch
                 className="relative px-5 py-2 text-sm font-semibold text-canvas bg-gold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-gold-sm hover:scale-[1.02]"
               >
                 Start a conversation
@@ -119,8 +110,8 @@ export default function Navigation() {
                 className="py-3 border-b border-border"
               >
                 <Link
-                  href={resolveHref(link.href)}
-                  prefetch={link.prefetch}
+                  href={link.href}
+                  prefetch
                   onClick={() => setMenuOpen(false)}
                   className="block text-2xl font-semibold text-text-primary hover:text-gold transition-colors"
                 >
@@ -134,7 +125,8 @@ export default function Navigation() {
               transition={{ delay: 0.3 }}
             >
               <Link
-                href={contactHref}
+                href="/contact"
+                prefetch
                 onClick={() => setMenuOpen(false)}
                 className="mt-6 block px-6 py-4 text-center text-lg font-semibold text-canvas bg-gold rounded-2xl"
               >

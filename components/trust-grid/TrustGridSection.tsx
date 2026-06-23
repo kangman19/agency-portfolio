@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Shield, Smartphone, BarChart3, Clock, HeartHandshake, Globe, Lock, Cpu } from "lucide-react";
+import { Shield, Smartphone, Search, Clock, HeartHandshake, Globe, Lock, Cpu } from "lucide-react";
 import { useInView, useMousePosition } from "@/lib/utils";
 
 interface BentoCardProps {
@@ -51,7 +51,7 @@ function BentoCard({ icon: Icon, title, description, accentColor, size = "normal
 function SecurityBadges() {
   return (
     <div className="flex flex-wrap gap-2 mt-2">
-      {["TLS 1.3", "AES-256", "2FA", "GDPR"].map((label, i) => (
+      {["TLS 1.3", "SSL Encryption", "DDoS Protection", "Static Isolation"].map((label, i) => (
         <motion.div key={label} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.15 }}
           className="flex items-center gap-1.5 bg-gold/5 border border-gold/20 rounded-lg px-2.5 py-1.5">
           <Lock size={10} className="text-gold" />
@@ -97,35 +97,6 @@ function UptimeGrid() {
   );
 }
 
-function GrowthSparkline() {
-  const points = [20, 28, 24, 35, 42, 38, 55, 62, 58, 75, 80, 95];
-  const max = Math.max(...points);
-  const w = 220; const h = 60;
-  const svgPoints = points.map((v, i) => `${(i / (points.length - 1)) * w},${h - (v / max) * h}`).join(" ");
-  return (
-    <div className="mt-3 relative">
-      <svg viewBox={`0 0 ${w} ${h}`} className="w-full" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#C9A96E" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#C9A96E" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        <polygon points={`0,${h} ${svgPoints} ${w},${h}`} fill="url(#sparkGrad)" />
-        <motion.polyline points={svgPoints} fill="none" stroke="#C9A96E" strokeWidth="2"
-          strokeLinecap="round" strokeLinejoin="round"
-          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }} />
-        <circle cx={w} cy={h - (points[points.length - 1] / max) * h} r="3" fill="#C9A96E" />
-      </svg>
-      <div className="flex justify-between text-[9px] font-mono text-text-muted mt-1">
-        <span>Jan</span>
-        <span className="text-gold">+380% organic growth</span>
-        <span>Dec</span>
-      </div>
-    </div>
-  );
-}
-
 export default function TrustGridSection() {
   const [sectionRefCb, inView] = useInView(0.1);
 
@@ -150,7 +121,7 @@ export default function TrustGridSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto">
-          <BentoCard icon={Shield} title="Airtight Security" description="Your customer data is protected by bank-grade encryption. We run automated security scans daily so you never have to worry about hackers or data leaks." accentColor="gold" size="wide" tag="Always On" delay={0.1} inView={inView}><SecurityBadges /></BentoCard>
+          <BentoCard icon={Shield} title="Airtight Security" description="Built on an isolated, serverless global architecture. By serving pre-compiled static HTML instead of running a vulnerable database backend, your site is implicitly protected against standard server exploits, malware injection, and common security threats out of the box." accentColor="gold" size="wide" tag="Always On" delay={0.1} inView={inView}><SecurityBadges /></BentoCard>
           <BentoCard icon={Smartphone} title="Mobile-First Engine" description="Over 70% of your customers browse on their phones. Every site we build works flawlessly on all screen sizes, from a small Nokia to a wide desktop." accentColor="sage" tag="Responsive" delay={0.2} inView={inView}>
             <div className="mt-3 space-y-2">
               <ScoreBar label="Performance" score={98} color="#C9A96E" />
@@ -158,8 +129,8 @@ export default function TrustGridSection() {
               <ScoreBar label="Best Practices" score={96} color="#D4956A" />
             </div>
           </BentoCard>
-          <BentoCard icon={Clock} title="Always Online, Never Down" description="We deploy on enterprise-grade infrastructure with redundancy built in. If something breaks at 3am, our monitoring alerts us, not you." accentColor="sage" tag="99.9% SLA" delay={0.3} inView={inView}><UptimeGrid /></BentoCard>
-          <BentoCard icon={BarChart3} title="Automated Growth Tools" description="Built-in SEO, analytics dashboards, and conversion tracking, all configured and explained in plain language. Know exactly how your site is performing every day." accentColor="gold" size="wide" delay={0.4} inView={inView}><GrowthSparkline /></BentoCard>
+          <BentoCard icon={Clock} title="Always Online, Never Down" description="We deploy on enterprise-grade infrastructure with redundancy built in ensuring high availability and uptime." accentColor="sage" tag="99.9% SLA" delay={0.3} inView={inView}><UptimeGrid /></BentoCard>
+          <BentoCard icon={Search} title="Search Engine Optimization" description="Engineered with semantic HTML structures, lightning-fast asset optimization, and pristine metadata configurations out of the box. We make sure search engines crawl and index your business flawlessly so local customers find you first." accentColor="gold" size="wide" delay={0.4} inView={inView} />
           <BentoCard icon={HeartHandshake} title="Human Support, Always" description="You'll always reach a real person, not a chatbot. WhatsApp, email, or phone. We're your long-term tech partner, not just a one-time vendor." accentColor="amber" tag="Local Team" delay={0.5} inView={inView} />
           <BentoCard icon={Globe} title="Blazing Fast Load Times" description="Every millisecond your site takes to load costs you customers. We optimize your code and assets so your pages load instantly on any mobile network in Nairobi." accentColor="sage" delay={0.6} inView={inView} />
 
@@ -174,7 +145,7 @@ export default function TrustGridSection() {
               </div>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["Next.js", "React", "TypeScript", "Firebase", "Redis", "Vercel", "Paystack for mpesa/card payments", "Cloudflare", "Docker"].map((tech) => (
+              {["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel", "AWS Global Infrastructure", "Serverless APIs", "Edge Network Routing", "Paystack - Digital Payments"].map((tech) => (
                 <span key={tech} className="px-3 py-1.5 bg-surface-2 border border-border rounded-xl text-xs font-mono text-text-secondary hover:border-gold/30 hover:text-gold transition-colors duration-200 cursor-default">{tech}</span>
               ))}
             </div>

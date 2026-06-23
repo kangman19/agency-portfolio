@@ -1,14 +1,13 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, ArrowRight, MessageSquare, Clock, Shield, Calendar, Key, Target, TrendingUp } from "lucide-react";
+import { Send, CheckCircle, ArrowRight, MessageSquare, Clock, Shield } from "lucide-react";
 import { useInView } from "@/lib/utils";
-import { SITE, PROMISES, COMMS_WEEK } from "@/lib/content";
+import { SITE } from "@/lib/content";
 
 type FormState = "idle" | "submitting" | "success";
 const SERVICES = ["New Website","Redesign Existing Site","E-commerce Store","Booking System","Web Application","SEO & Analytics"];
 const BUDGET_RANGES = ["Under KSh 35,000","KSh 35k – 60k","KSh 60k – 120k","KSh 120k+","Not sure yet"];
-const PROMISE_ICON_MAP: Record<string, React.ElementType> = { MessageSquare, Calendar, Key, Target, TrendingUp };
 
 export default function ContactSection() {
   const [sectionRefCb, inView] = useInView(0.1);
@@ -41,53 +40,14 @@ export default function ContactSection() {
   };
 
   return (
-    <section ref={sectionRefCb} className="relative py-24 lg:py-32 bg-canvas overflow-hidden">
+    <section id="contact" ref={sectionRefCb} className="relative py-24 lg:py-32 bg-canvas overflow-hidden">
       <div className="absolute left-0 bottom-0 w-[500px] h-[400px] rounded-full bg-gold/4 blur-[140px] pointer-events-none" />
       <div className="absolute right-0 top-0 w-[400px] h-[400px] rounded-full bg-sage/4 blur-[120px] pointer-events-none" />
       <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[500px] h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Trust promises strip */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}
-          className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
-          {PROMISES.map((p, i) => {
-            const Icon = PROMISE_ICON_MAP[p.icon] ?? MessageSquare;
-            const isLast = i === PROMISES.length - 1;
-            return (
-              <motion.div key={p.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 + i * 0.07 }}
-                className={`bg-surface border border-border rounded-2xl p-5 bento-border hover:-translate-y-1 transition-transform duration-200 ${isLast ? "col-span-2 lg:col-span-1 lg:col-start-2" : ""}`}>
-                <Icon size={20} className="text-gold mb-3" />
-                <h3 className="text-sm font-bold text-text-primary mb-1">{p.title}</h3>
-                <p className="text-xs text-text-muted leading-relaxed">{p.desc}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-
-        {/* A typical week */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.4 }}
-          className="rounded-3xl bg-surface-3 border border-border p-8 sm:p-10 mb-20 bento-border overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-gold/4 blur-3xl pointer-events-none" />
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.3fr]">
-            <div>
-              <p className="font-mono text-label text-text-muted uppercase tracking-widest mb-2">Development Phase — Starting Week 2</p>
-              <h3 className="text-display-md font-extrabold text-text-primary">A typical week, once we're building</h3>
-              <p className="mt-4 text-text-secondary">No mystery, no silence, no "we'll circle back". Just a steady rhythm you can set your watch by.</p>
-              <p className="mt-6 font-bold text-gold">{SITE.founderName}, founder</p>
-            </div>
-            <div className="grid gap-3">
-              {COMMS_WEEK.map((d) => (
-                <div key={d.day} className="flex items-center gap-5 rounded-2xl bg-surface border border-border px-5 py-4">
-                  <span className="w-20 shrink-0 font-mono font-bold text-gold">{d.day}</span>
-                  <span className="text-sm text-text-secondary">{d.what}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* CTA + Form */}
-        <div id="contact" className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start scroll-mt-24">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
+          {/* Left column — CTA copy */}
           <div>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
               className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/5">
@@ -97,11 +57,11 @@ export default function ContactSection() {
             <motion.h2 initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}
               className="text-display-md font-extrabold text-text-primary mb-4">
               Tell us about your business.<br />
-              <span className="gradient-text-gold">We'll tell you what we'd build, for free.</span>
+              <span className="gradient-text-gold">We&apos;ll tell you what we&apos;d build, for free.</span>
             </motion.h2>
             <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}
               className="text-body-lg text-text-secondary mb-8 leading-relaxed">
-              One email or WhatsApp message is enough to start. You'll hear back from {SITE.founderFirst}, the founder, within one working day.
+              One email or WhatsApp message is enough to start. You&apos;ll hear back from {SITE.founderFirst}, the founder, within one working day.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.3 }} className="space-y-4">
               {[
@@ -131,7 +91,7 @@ export default function ContactSection() {
             </motion.a>
           </div>
 
-          {/* Form */}
+          {/* Right column — Form */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.25 }}
             className="bg-surface border border-border rounded-3xl p-7 bento-border relative overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
@@ -142,13 +102,13 @@ export default function ContactSection() {
                   <CheckCircle size={32} className="text-gold" />
                 </motion.div>
                 <h3 className="text-xl font-bold text-text-primary">Thank you!</h3>
-                <p className="text-text-secondary text-sm max-w-sm">We'll reach out on E-Mail/WhatsApp shortly.</p>
+                <p className="text-text-secondary text-sm max-w-sm">We&apos;ll reach out on E-Mail/WhatsApp shortly.</p>
               </div>
             ) : (
               <div className="space-y-5">
                 <div>
                   <h3 className="text-lg font-bold text-text-primary mb-1">Tell us about your project</h3>
-                  <p className="text-xs text-text-muted">All fields are optional. Share what you're comfortable with.</p>
+                  <p className="text-xs text-text-muted">All fields are optional. Share what you&apos;re comfortable with.</p>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
@@ -196,7 +156,7 @@ export default function ContactSection() {
                   )}
                   <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12" />
                 </button>
-                <p className="text-center text-xs text-text-muted"> Your details are private and never shared with third parties.</p>
+                <p className="text-center text-xs text-text-muted">Your details are private and never shared with third parties.</p>
               </div>
             )}
           </motion.div>
