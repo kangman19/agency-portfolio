@@ -21,12 +21,27 @@ export default function ContactSection() {
 
   const handleSubmit = async () => {
     setFormState("submitting");
-    await new Promise((r) => setTimeout(r, 1800));
-    setFormState("success");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          contactInfo: form.email,
+          businessType: selectedService,
+          budget: selectedBudget,
+          description: form.message,
+        }),
+      });
+      if (!res.ok) throw new Error("send failed");
+      setFormState("success");
+    } catch {
+      setFormState("idle");
+    }
   };
 
   return (
-    <section id="contact" ref={sectionRefCb} className="relative py-24 lg:py-32 bg-canvas overflow-hidden">
+    <section ref={sectionRefCb} className="relative py-24 lg:py-32 bg-canvas overflow-hidden">
       <div className="absolute left-0 bottom-0 w-[500px] h-[400px] rounded-full bg-gold/4 blur-[140px] pointer-events-none" />
       <div className="absolute right-0 top-0 w-[400px] h-[400px] rounded-full bg-sage/4 blur-[120px] pointer-events-none" />
       <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[500px] h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
@@ -72,7 +87,7 @@ export default function ContactSection() {
         </motion.div>
 
         {/* CTA + Form */}
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
+        <div id="contact" className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start scroll-mt-24">
           <div>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
               className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/5">
@@ -126,8 +141,8 @@ export default function ContactSection() {
                   className="w-16 h-16 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center">
                   <CheckCircle size={32} className="text-gold" />
                 </motion.div>
-                <h3 className="text-xl font-bold text-text-primary">We got your message!</h3>
-                <p className="text-text-secondary text-sm max-w-sm">Expect a personal reply within 24 hours. We're excited to learn about your project.</p>
+                <h3 className="text-xl font-bold text-text-primary">Thank you!</h3>
+                <p className="text-text-secondary text-sm max-w-sm">We'll reach out on E-Mail/WhatsApp shortly.</p>
               </div>
             ) : (
               <div className="space-y-5">
