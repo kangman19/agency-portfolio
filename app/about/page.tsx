@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SITE } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -37,22 +36,6 @@ export default function AboutPage() {
         <p className="mt-10 text-sm font-semibold text-gold">
           — Ian Kangethe, Founder
         </p>
-        <div className="mt-12 flex flex-col sm:flex-row gap-4">
-          <a
-            href={`https://wa.me/${SITE.phone.replace(/[^0-9]/g, "")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold text-canvas font-bold rounded-2xl text-sm hover:shadow-gold-sm hover:scale-[1.02] transition-all duration-300"
-          >
-            Start a conversation
-          </a>
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border text-text-secondary font-semibold rounded-2xl text-sm hover:border-border-bright hover:text-text-primary transition-all duration-200"
-          >
-            ← Back to home
-          </Link>
-        </div>
       </div>
     </main>
   );

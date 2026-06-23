@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -15,6 +16,14 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Hash-only links need to be prefixed with "/" when not on the homepage
+  // so the browser navigates to the homepage first, then scrolls to the section.
+  const resolveHref = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
+
+  const contactHref = resolveHref("#contact");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -38,7 +47,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2.5 group">
+            <Link href="/" className="flex items-center gap-2.5 group">
               <div className="relative w-8 h-8 flex items-center justify-center">
                 <div className="absolute inset-0 rounded-lg bg-gold/10 border border-gold/30 group-hover:border-gold/60 transition-colors duration-300" />
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="relative z-10">
@@ -49,14 +58,14 @@ export default function Navigation() {
               <span className="font-bold text-text-primary tracking-tight">
                 Astral<span className="text-gold">.</span>
               </span>
-            </a>
+            </Link>
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
-                  href={link.href}
+                  href={resolveHref(link.href)}
                   className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200 relative group"
                 >
                   {link.label}
@@ -67,12 +76,12 @@ export default function Navigation() {
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
-              <a
-                href="#contact"
+              <Link
+                href={contactHref}
                 className="relative px-5 py-2 text-sm font-semibold text-canvas bg-gold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-gold-sm hover:scale-[1.02]"
               >
                 Start a conversation
-              </a>
+              </Link>
             </div>
 
             {/* Mobile hamburger */}
@@ -98,47 +107,36 @@ export default function Navigation() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 bg-canvas/97 backdrop-blur-xl pt-20 px-6 flex flex-col gap-2 md:hidden"
           >
-            {navLinks.map((link, i) =>
-              link.href.startsWith("/") ? (
-                <motion.div
-                  key={link.label}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.07 }}
-                  className="py-3 border-b border-border"
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="block text-2xl font-semibold text-text-primary hover:text-gold transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ) : (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
+            {navLinks.map((link, i) => (
+              <motion.div
+                key={link.label}
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.07 }}
+                className="py-3 border-b border-border"
+              >
+                <Link
+                  href={resolveHref(link.href)}
                   onClick={() => setMenuOpen(false)}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.07 }}
-                  className="text-2xl font-semibold text-text-primary py-3 border-b border-border hover:text-gold transition-colors"
+                  className="block text-2xl font-semibold text-text-primary hover:text-gold transition-colors"
                 >
                   {link.label}
-                </motion.a>
-              )
-            )}
-            <motion.a
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
+                </Link>
+              </motion.div>
+            ))}
+            <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mt-6 px-6 py-4 text-center text-lg font-semibold text-canvas bg-gold rounded-2xl"
             >
-              Start a conversation
-            </motion.a>
+              <Link
+                href={contactHref}
+                onClick={() => setMenuOpen(false)}
+                className="mt-6 block px-6 py-4 text-center text-lg font-semibold text-canvas bg-gold rounded-2xl"
+              >
+                Start a conversation
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
