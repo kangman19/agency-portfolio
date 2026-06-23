@@ -24,7 +24,7 @@ export default function Footer() {
               <span className="font-bold text-lg text-text-primary">{SITE.shortName}<span className="text-gold">.</span></span>
             </a>
             <p className="text-sm text-text-muted leading-relaxed max-w-xs">
-              Websites and digital systems for businesses that are going places — across East Africa and beyond.
+              Websites and digital systems for businesses that are going places, across East Africa and beyond.
             </p>
             <div className="flex gap-3 mt-6">
               {[{ Icon: Github, href: "#" }, { Icon: Twitter, href: "#" }, { Icon: Linkedin, href: "#" }, { Icon: Mail, href: `mailto:${SITE.email}` }].map(({ Icon, href }, i) => (
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <div className="py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-text-muted font-mono">© {new Date().getFullYear()} {SITE.name} — {SITE.location} 🇰🇪</p>
+          <p className="text-xs text-text-muted font-mono">© {new Date().getFullYear()} {SITE.name}, {SITE.location} 🇰🇪</p>
           <p className="text-xs text-text-muted">
             Built with <span className="text-gold">Next.js</span>, <span className="text-sage">TypeScript</span> & <span className="text-amber">Tailwind CSS</span>
           </p>

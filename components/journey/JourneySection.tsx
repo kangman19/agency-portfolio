@@ -20,7 +20,7 @@ export default function JourneySection() {
           </motion.div>
           <motion.h2 initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}
             className="text-display-lg font-extrabold text-text-primary mb-4">
-            From first chat to launch day —{" "}<span className="gradient-text-gold">a path, not a process</span>
+            From first chat to launch day,{" "}<span className="gradient-text-gold">a path, not a process</span>
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}
             className="text-body-md text-text-secondary max-w-xl mx-auto">

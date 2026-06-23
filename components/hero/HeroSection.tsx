@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useIsMobile } from "@/lib/utils";
 
 const PATH_D = "M -50,200 C 150,120 300,320 500,180 S 750,80 900,240 S 1150,400 1400,200 S 1700,60 1920,280";
@@ -185,32 +185,11 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.6 }}
-          className="text-body-lg text-text-secondary max-w-2xl mb-10 leading-relaxed"
+          className="text-body-lg text-text-secondary max-w-2xl mb-6 leading-relaxed"
         >
           We build beautiful websites, booking systems and business tools for restaurants, shops,
-          clinics and growing companies — explained in plain English, delivered with care.
+          clinics and growing companies, built for growth, delivered with absolute clarity.
         </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="flex flex-col sm:flex-row items-center gap-4"
-        >
-          <a href="#work"
-            className="group relative flex items-center gap-2 px-8 py-4 bg-gold text-canvas font-semibold rounded-2xl transition-all duration-300 hover:shadow-gold-md hover:scale-[1.02] overflow-hidden"
-          >
-            <span className="relative z-10">See real results</span>
-            <ArrowRight size={18} className="relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-            <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
-          </a>
-          <a href="#contact"
-            className="flex items-center gap-2 px-8 py-4 border border-border-bright text-text-secondary rounded-2xl font-medium transition-all duration-300 hover:border-gold/40 hover:text-text-primary hover:bg-gold/5"
-          >
-            Start a conversation
-          </a>
-        </motion.div>
 
         {/* Tagline badges */}
         <motion.div

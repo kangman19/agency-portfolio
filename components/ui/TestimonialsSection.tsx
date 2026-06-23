@@ -201,7 +201,7 @@ export default function TestimonialsSection() {
             transition={{ delay: 0.2 }}
             className="text-body-md text-text-secondary max-w-xl mx-auto"
           >
-            Real results from real businesses across East Africa — from solo founders to growing enterprises.
+            Real results from real businesses across East Africa, from solo founders to growing enterprises.
           </motion.p>
         </div>
 

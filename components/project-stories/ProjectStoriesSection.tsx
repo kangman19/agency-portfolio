@@ -25,7 +25,7 @@ export default function ProjectStoriesSection() {
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}
             className="text-body-md text-text-secondary max-w-2xl">
-            One flagship system has been live for 18 months. Concepts are clearly marked — because trust starts with honest labels.
+            One flagship system has been live for 18 months. Concepts are clearly marked, because trust starts with honest labels.
           </motion.p>
         </div>
 

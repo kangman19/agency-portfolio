@@ -22,17 +22,13 @@ export default function TransformationSection() {
       <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[500px] h-[1px] bg-gradient-to-r from-transparent via-sage/30 to-transparent" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-14">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full border border-sage/30 bg-sage/5">
-            <span className="font-mono text-label text-sage uppercase tracking-wider">Sound familiar?</span>
-          </motion.div>
           <motion.h2 initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}
             className="text-display-lg font-extrabold text-text-primary mb-4">
             Pick a business like yours.{" "}<span className="gradient-text-gold">See what changes.</span>
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}
             className="text-body-md text-text-secondary max-w-2xl">
-            Real patterns from real projects — described the way owners describe them, not the way developers do.
+            Real patterns from real projects, described the way owners describe them, not the way developers do.
           </motion.p>
         </div>
 

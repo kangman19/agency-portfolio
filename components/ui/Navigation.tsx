@@ -46,7 +46,7 @@ export default function Navigation() {
                 </svg>
               </div>
               <span className="font-bold text-text-primary tracking-tight">
-                Northline<span className="text-gold">.</span>
+                Astral<span className="text-gold">.</span>
               </span>
             </a>
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Northline Studio — Websites & Digital Systems for Growing Businesses",
+  title: "Astral Agency: Websites & Digital Systems for Growing Businesses",
   description: "We build fast, beautiful websites, booking systems and business tools for restaurants, shops, clinics and growing companies across East Africa. Plain English, delivered with care.",
 };
 

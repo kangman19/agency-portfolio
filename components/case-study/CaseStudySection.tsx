@@ -30,7 +30,7 @@ function BeforeMockup() {
         </div>
         <div className="p-3 space-y-3">
           <div className="w-full h-20 bg-gray-300 border-2 border-gray-400 flex items-center justify-center">
-            <span className="text-[10px] text-gray-500 text-center">[IMAGE 800×200 — Image missing]</span>
+            <span className="text-[10px] text-gray-500 text-center">[IMAGE 800×200, missing]</span>
           </div>
           <div className="flex gap-3">
             <div className="flex-1 space-y-2">
@@ -195,7 +195,7 @@ export default function CaseStudySection() {
                   {v === "before" ? "😰 Before" : "✨ After"}
                 </button>
               ))}
-              <span className="ml-2 text-xs text-text-muted font-mono">— Alpha Traders Ltd.</span>
+              <span className="ml-2 text-xs text-text-muted font-mono">· Alpha Traders Ltd.</span>
             </div>
 
             {/* Drag slider */}
@@ -227,7 +227,7 @@ export default function CaseStudySection() {
           {/* Metrics panel */}
           <div className="space-y-4">
             <motion.div initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.4 }}>
-              <div className="text-label font-mono text-text-muted uppercase tracking-widest mb-3">Business Impact — 6 months post-launch</div>
+              <div className="text-label font-mono text-text-muted uppercase tracking-widest mb-3">Business Impact, 6 months post-launch</div>
               <div className="grid grid-cols-1 gap-3">
                 <MetricCard icon={TrendingUp} label="Conversion Rate" value={140} prefix="+" suffix="%" inView={inView} delay={0.5} color="gold" />
                 <MetricCard icon={Zap} label="Load Time" value={4} suffix="× faster" inView={inView} delay={0.6} color="sage" />
@@ -241,7 +241,7 @@ export default function CaseStudySection() {
               className="bg-surface border border-border rounded-2xl p-4 relative">
               <div className="absolute top-3 left-4 text-3xl text-gold/30 font-serif leading-none">"</div>
               <p className="text-sm text-text-secondary italic pt-3 leading-relaxed">
-                Northline completely transformed how customers find us online. Our phone started ringing more within the first week.
+                Astral completely transformed how customers find us online. Our phone started ringing more within the first week.
               </p>
               <footer className="mt-3 flex items-center gap-2">
                 <div className="w-7 h-7 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-xs font-bold text-gold">JK</div>

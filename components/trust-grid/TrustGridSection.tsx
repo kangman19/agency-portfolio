@@ -150,18 +150,18 @@ export default function TrustGridSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto">
-          <BentoCard icon={Shield} title="Bulletproof Security" description="Your customer data is protected by bank-grade encryption. We run automated security scans daily so you never have to worry about hackers or data leaks." accentColor="gold" size="wide" tag="Always On" delay={0.1} inView={inView}><SecurityBadges /></BentoCard>
-          <BentoCard icon={Smartphone} title="Mobile-First Engine" description="Over 70% of your customers browse on their phones. Every site we build works flawlessly on all screen sizes — from a small Nokia to a wide desktop." accentColor="sage" tag="Responsive" delay={0.2} inView={inView}>
+          <BentoCard icon={Shield} title="Airtight Security" description="Your customer data is protected by bank-grade encryption. We run automated security scans daily so you never have to worry about hackers or data leaks." accentColor="gold" size="wide" tag="Always On" delay={0.1} inView={inView}><SecurityBadges /></BentoCard>
+          <BentoCard icon={Smartphone} title="Mobile-First Engine" description="Over 70% of your customers browse on their phones. Every site we build works flawlessly on all screen sizes, from a small Nokia to a wide desktop." accentColor="sage" tag="Responsive" delay={0.2} inView={inView}>
             <div className="mt-3 space-y-2">
               <ScoreBar label="Performance" score={98} color="#C9A96E" />
               <ScoreBar label="Accessibility" score={100} color="#7B9E87" />
               <ScoreBar label="Best Practices" score={96} color="#D4956A" />
             </div>
           </BentoCard>
-          <BentoCard icon={Clock} title="Always Online, Never Down" description="We deploy on enterprise-grade infrastructure with redundancy built in. If something breaks at 3am, our monitoring alerts us — not you." accentColor="sage" tag="99.9% SLA" delay={0.3} inView={inView}><UptimeGrid /></BentoCard>
-          <BentoCard icon={BarChart3} title="Automated Growth Tools" description="Built-in SEO, analytics dashboards, and conversion tracking — all configured and explained in plain language. Know exactly how your site is performing every day." accentColor="gold" size="wide" delay={0.4} inView={inView}><GrowthSparkline /></BentoCard>
-          <BentoCard icon={HeartHandshake} title="Human Support, Always" description="You'll always reach a real person — not a chatbot. WhatsApp, email, or phone. We're your long-term tech partner, not just a one-time vendor." accentColor="amber" tag="Local Team" delay={0.5} inView={inView} />
-          <BentoCard icon={Globe} title="Global Speed, Local Heart" description="CDN-powered delivery means your site loads fast for customers in Nairobi, Mombasa, Kampala, or London — under 500ms everywhere." accentColor="sage" delay={0.6} inView={inView}>
+          <BentoCard icon={Clock} title="Always Online, Never Down" description="We deploy on enterprise-grade infrastructure with redundancy built in. If something breaks at 3am, our monitoring alerts us, not you." accentColor="sage" tag="99.9% SLA" delay={0.3} inView={inView}><UptimeGrid /></BentoCard>
+          <BentoCard icon={BarChart3} title="Automated Growth Tools" description="Built-in SEO, analytics dashboards, and conversion tracking, all configured and explained in plain language. Know exactly how your site is performing every day." accentColor="gold" size="wide" delay={0.4} inView={inView}><GrowthSparkline /></BentoCard>
+          <BentoCard icon={HeartHandshake} title="Human Support, Always" description="You'll always reach a real person, not a chatbot. WhatsApp, email, or phone. We're your long-term tech partner, not just a one-time vendor." accentColor="amber" tag="Local Team" delay={0.5} inView={inView} />
+          <BentoCard icon={Globe} title="Global Speed, Local Heart" description="CDN-powered delivery means your site loads fast for customers in Nairobi, Mombasa, Kampala, or London, under 500ms everywhere." accentColor="sage" delay={0.6} inView={inView}>
             <div className="mt-3 flex flex-wrap gap-2">
               {["Nairobi", "Mombasa", "Kampala", "London", "Dubai"].map((city) => (
                 <div key={city} className="flex items-center gap-1.5 bg-sage/5 border border-sage/15 rounded-lg px-2.5 py-1">
@@ -179,7 +179,7 @@ export default function TrustGridSection() {
               <div className="p-3 rounded-2xl bg-amber/10 border border-amber/20"><Cpu size={20} className="text-amber" /></div>
               <div>
                 <h3 className="font-bold text-text-primary">Enterprise Tech Stack</h3>
-                <p className="text-sm text-text-muted">The same tools used by Airbnb, Netflix & Shopify — now for your business.</p>
+                <p className="text-sm text-text-muted">The same tools used by Airbnb, Netflix & Shopify, now for your business.</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-2">

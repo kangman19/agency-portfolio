@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, ArrowRight, MessageSquare, Clock, Shield } from "lucide-react";
+import { Send, CheckCircle, ArrowRight, MessageSquare, Clock, Shield, Calendar, Key, Target, TrendingUp } from "lucide-react";
 import { useInView } from "@/lib/utils";
 import { SITE, PROMISES, COMMS_WEEK } from "@/lib/content";
 
 type FormState = "idle" | "submitting" | "success";
 const SERVICES = ["New Website","Redesign Existing Site","E-commerce Store","Booking System","Web Application","SEO & Analytics"];
-const BUDGET_RANGES = ["Under KSh 50,000","KSh 50k – 150k","KSh 150k – 500k","KSh 500k+","Not sure yet"];
+const BUDGET_RANGES = ["Under KSh 35,000","KSh 35k – 60k","KSh 60k – 120k","KSh 120k+","Not sure yet"];
+const PROMISE_ICON_MAP: Record<string, React.ElementType> = { MessageSquare, Calendar, Key, Target, TrendingUp };
 
 export default function ContactSection() {
   const [sectionRefCb, inView] = useInView(0.1);
@@ -34,14 +35,18 @@ export default function ContactSection() {
         {/* Trust promises strip */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}
           className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
-          {PROMISES.map((p, i) => (
-            <motion.div key={p.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 + i * 0.07 }}
-              className="bg-surface border border-border rounded-2xl p-5 bento-border hover:-translate-y-1 transition-transform duration-200">
-              <span className="text-2xl mb-3 block">{p.emoji}</span>
-              <h3 className="text-sm font-bold text-text-primary mb-1">{p.title}</h3>
-              <p className="text-xs text-text-muted leading-relaxed">{p.desc}</p>
-            </motion.div>
-          ))}
+          {PROMISES.map((p, i) => {
+            const Icon = PROMISE_ICON_MAP[p.icon] ?? MessageSquare;
+            const isLast = i === PROMISES.length - 1;
+            return (
+              <motion.div key={p.title} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 + i * 0.07 }}
+                className={`bg-surface border border-border rounded-2xl p-5 bento-border hover:-translate-y-1 transition-transform duration-200 ${isLast ? "col-span-2 lg:col-span-1 lg:col-start-2" : ""}`}>
+                <Icon size={20} className="text-gold mb-3" />
+                <h3 className="text-sm font-bold text-text-primary mb-1">{p.title}</h3>
+                <p className="text-xs text-text-muted leading-relaxed">{p.desc}</p>
+              </motion.div>
+            );
+          })}
         </motion.div>
 
         {/* A typical week */}
@@ -53,7 +58,7 @@ export default function ContactSection() {
               <p className="font-mono text-label text-text-muted uppercase tracking-widest mb-2">What working with us feels like</p>
               <h3 className="text-display-md font-extrabold text-text-primary">A typical week, once we're building</h3>
               <p className="mt-4 text-text-secondary">No mystery, no silence, no "we'll circle back". Just a steady rhythm you can set your watch by.</p>
-              <p className="mt-6 font-bold text-gold">— {SITE.founderName}, founder</p>
+              <p className="mt-6 font-bold text-gold">{SITE.founderName}, founder</p>
             </div>
             <div className="grid gap-3">
               {COMMS_WEEK.map((d) => (
@@ -77,15 +82,15 @@ export default function ContactSection() {
             <motion.h2 initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}
               className="text-display-md font-extrabold text-text-primary mb-4">
               Tell us about your business.<br />
-              <span className="gradient-text-gold">We'll tell you what we'd build — for free.</span>
+              <span className="gradient-text-gold">We'll tell you what we'd build, for free.</span>
             </motion.h2>
             <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}
               className="text-body-lg text-text-secondary mb-8 leading-relaxed">
-              One email or WhatsApp message is enough to start. You'll hear back from {SITE.founderFirst} — the actual founder — within one working day.
+              One email or WhatsApp message is enough to start. You'll hear back from {SITE.founderFirst}, the actual founder, within one working day.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.3 }} className="space-y-4">
               {[
-                { icon: Clock, title: "Reply within 24 hours", desc: "We respond to every inquiry personally — usually much faster.", color: "gold" },
+                { icon: Clock, title: "Reply within 24 hours", desc: "We respond to every inquiry personally, usually much faster.", color: "gold" },
                 { icon: Shield, title: "No obligation, no pressure", desc: "A free consultation. We'll only work together if it's a great fit.", color: "sage" },
                 { icon: CheckCircle, title: "Fixed-price projects", desc: "No surprises. You'll get a clear scope and price before we start.", color: "amber" },
               ].map((item) => (
@@ -128,7 +133,7 @@ export default function ContactSection() {
               <div className="space-y-5">
                 <div>
                   <h3 className="text-lg font-bold text-text-primary mb-1">Tell us about your project</h3>
-                  <p className="text-xs text-text-muted">All fields are optional — share what you're comfortable with.</p>
+                  <p className="text-xs text-text-muted">All fields are optional. Share what you're comfortable with.</p>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
@@ -176,7 +181,7 @@ export default function ContactSection() {
                   )}
                   <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12" />
                 </button>
-                <p className="text-center text-xs text-text-muted">🔒 Your details are private and never shared with third parties.</p>
+                <p className="text-center text-xs text-text-muted"> Your details are private and never shared with third parties.</p>
               </div>
             )}
           </motion.div>

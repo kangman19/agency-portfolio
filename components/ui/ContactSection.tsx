@@ -95,7 +95,7 @@ export default function ContactSection() {
               className="text-body-lg text-text-secondary mb-8 leading-relaxed"
             >
               Tell us about your business and what you're trying to achieve. We'll
-              come back within 24 hours with honest advice — no sales pressure.
+              come back within 24 hours with honest advice. No sales pressure.
             </motion.p>
 
             {/* Trust signals */}
@@ -109,7 +109,7 @@ export default function ContactSection() {
                 {
                   icon: Clock,
                   title: "Reply within 24 hours",
-                  desc: "We respond to every inquiry personally — usually much faster.",
+                  desc: "We respond to every inquiry personally, usually much faster.",
                   color: "teal",
                 },
                 {
@@ -191,7 +191,7 @@ export default function ContactSection() {
               <div className="space-y-5">
                 <div>
                   <h3 className="text-lg font-bold text-text-primary mb-1">Tell us about your project</h3>
-                  <p className="text-xs text-text-muted">All fields are optional — share what you're comfortable with.</p>
+                  <p className="text-xs text-text-muted">All fields are optional. Share what you're comfortable with.</p>
                 </div>
 
                 {/* Name + Email */}
@@ -307,7 +307,7 @@ export default function ContactSection() {
                 </button>
 
                 <p className="text-center text-xs text-text-muted">
-                  🔒 Your details are private and never shared with third parties.
+                   Your details are private and never shared with third parties.
                 </p>
               </div>
             )}

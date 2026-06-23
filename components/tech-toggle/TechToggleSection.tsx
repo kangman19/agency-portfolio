@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -69,7 +69,7 @@ const FRIENDLY_CARDS = [
     title: "Lightning Fast Pages",
     subtitle: "Your pages load before customers can blink",
     description:
-      "We use intelligent pre-loading technology that predicts what page a visitor will click next and pre-loads it in the background — so every click feels instant.",
+      "We use intelligent pre-loading technology that predicts what page a visitor will click next and pre-loads it in the background, so every click feels instant.",
     metric: "0.4s avg. load time",
     metricColor: "text-teal",
     badge: "Speed",
@@ -79,7 +79,7 @@ const FRIENDLY_CARDS = [
     id: "security",
     icon: "🔐",
     title: "Fort Knox Security",
-    subtitle: "Sleep soundly — your data is locked up tight",
+    subtitle: "Sleep soundly. Your data is locked up tight.",
     description:
       "Every request to your site is verified and rate-limited. Customer data is encrypted both in transit and at rest. Automated scans run daily to catch vulnerabilities before attackers can.",
     metric: "0 breaches in 3 years",
@@ -93,7 +93,7 @@ const FRIENDLY_CARDS = [
     title: "Your Data, Always Safe",
     subtitle: "Reliable storage that grows with your business",
     description:
-      "Customer orders, contact forms, inventory — everything is stored in a structured, backed-up database. We design it to be fast, organised, and never lose a record.",
+      "Customer orders, contact forms, inventory: everything is stored in a structured, backed-up database. We design it to be fast, organised, and never lose a record.",
     metric: "Daily automated backups",
     metricColor: "text-lime",
     badge: "Database",
@@ -167,7 +167,7 @@ function GeekView({ snippetKey }: { snippetKey: string }) {
           <div className="w-3 h-3 rounded-full bg-[#28C840]" />
         </div>
         <div className="flex-1 text-center font-mono text-xs text-text-muted">
-          nexus-studio — {snippetKey}.ts
+          nexus-Agency / {snippetKey}.ts
         </div>
         <Terminal size={12} className="text-teal" />
       </div>
@@ -406,7 +406,7 @@ export default function TechToggleSection() {
               </div>
               <div className="text-sm text-text-muted">
                 {isGeek
-                  ? "This is real, production-ready code — not a mockup. We write clean, typed, maintainable TypeScript."
+                  ? "This is real, production-ready code, not a mockup. We write clean, typed, maintainable TypeScript."
                   : "Want to see the code powering this? Flip the toggle above."}
               </div>
             </div>
