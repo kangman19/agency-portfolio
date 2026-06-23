@@ -100,7 +100,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-canvas"
+      className="relative min-h-screen flex flex-col items-center overflow-hidden bg-canvas"
     >
       {!isMobile && <CursorOrb />}
 
@@ -154,8 +154,8 @@ export default function HeroSection() {
       <StatBadge label="Conversion lift" value="+140%" delay={1.4} className="top-[60%] right-[7%]" />
       <StatBadge label="Uptime SLA" value="99.9%" delay={1.6} className="top-[30%] right-[10%]" />
 
-      {/* Hero content */}
-      <div className="relative z-20 max-w-5xl mx-auto px-6 pt-24 text-center flex flex-col items-center">
+      {/* Hero content — flex-1 so it fills the viewport and centers itself */}
+      <div className="flex-1 relative z-20 w-full max-w-5xl mx-auto px-6 pt-24 text-center flex flex-col items-center justify-center">
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -204,12 +204,12 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — in-flow at bottom, never overlaps content above */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-text-muted"
+        className="relative z-20 mt-8 pb-8 flex flex-col items-center gap-1 text-text-muted"
       >
         <span className="font-mono text-label uppercase tracking-widest">Scroll</span>
         <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}>

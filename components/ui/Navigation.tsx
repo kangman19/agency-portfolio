@@ -6,11 +6,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
+const navLinks: { label: string; href: string; prefetch?: boolean }[] = [
   // { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "About", href: "/about" },
+  { label: "About", href: "/about", prefetch: true },
 ];
 
 export default function Navigation() {
@@ -66,6 +66,7 @@ export default function Navigation() {
                 <Link
                   key={link.label}
                   href={resolveHref(link.href)}
+                  prefetch={link.prefetch}
                   className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200 relative group"
                 >
                   {link.label}
@@ -117,6 +118,7 @@ export default function Navigation() {
               >
                 <Link
                   href={resolveHref(link.href)}
+                  prefetch={link.prefetch}
                   onClick={() => setMenuOpen(false)}
                   className="block text-2xl font-semibold text-text-primary hover:text-gold transition-colors"
                 >
