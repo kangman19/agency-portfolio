@@ -1,19 +1,13 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import HeroSection from "@/components/hero/HeroSection";
-import TransformationSection from "@/components/transformation/TransformationSection";
-import TrustGridSection from "@/components/trust-grid/TrustGridSection";
-import PlaygroundSection from "@/components/playground/PlaygroundSection";
-import JourneySection from "@/components/journey/JourneySection";
+import SuperSection from "@/components/super-section/SuperSection";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-canvas">
       <HeroSection />
-      <TransformationSection />
-      <TrustGridSection />
-      <PlaygroundSection />
-      <JourneySection />
+      <SuperSection />
       <HomeCTASection />
     </main>
   );
@@ -35,7 +29,7 @@ function HomeCTASection() {
           <span className="gradient-text-gold">your customers will love.</span>
         </h2>
         <p className="text-body-lg text-text-secondary mb-10 max-w-xl mx-auto leading-relaxed">
-          One conversation is all it takes. No commitment, no tech jargon — just an honest look at what we can build for your business.
+          One conversation is all it takes. No commitment, no tech jargon just an honest look at what we can build for your business.
         </p>
         <Link
           href="/contact"
