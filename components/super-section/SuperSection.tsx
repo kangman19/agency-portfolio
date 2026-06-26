@@ -36,7 +36,7 @@ const VERTICALS: Vertical[] = [
       "From high-converting landing pages to dynamic portfolios, car rentals, and booking showcases.",
     bullets: [
       "Stunning, fast single-page websites and landing pages",
-      "Clean product displays for car rentals, menus, or portfolios",
+      "Clean product displays for car rentals, listings, menus, or portfolios",
       "Instant WhatsApp buttons for quick customer inquiries",
       "Google-optimized setups so your site loads instantly on mobile",
       "AI-Powered WhatsApp Auto-Responder Linkages",
@@ -86,8 +86,8 @@ const VERTICALS: Vertical[] = [
     label: "Professional Services",
     heading: "Build undeniable corporate trust and capture premium B2B leads.",
     bullets: [
-      "Lightning-fast case study portfolios",
-      "Custom request-for-quote funnel optimization",
+      "Lightning fast case study portfolios",
+      "Custom request for quote funnel optimization",
       "Direct WhatsApp/Calendly operational links",
       "Multi-role business metrics dashboards",
     ],
