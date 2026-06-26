@@ -54,7 +54,8 @@ const SERVICES = [
 
 function FeaturePill({ text }: { text: string }) {
   return (
-    <li className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-surface-2 to-[rgba(245,158,11,0.07)] px-4 py-3.5 text-sm font-semibold text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.25)] hover:border-amber-400 hover:from-[#141008] hover:to-[rgba(245,158,11,0.14)] hover:shadow-[0_0_25px_rgba(245,158,11,0.4)] transition-all duration-300 cursor-default">
+    <li className="flex items-center gap-3 rounded-2xl border border-amber-500/10 bg-[#1c1b17] px-4 py-3.5 text-sm font-semibold text-amber-200/75 hover:bg-neutral-800/60 hover:border-amber-500/20 transition-all duration-200 cursor-default">
+      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" aria-hidden />
       {text}
     </li>
   );

@@ -35,10 +35,10 @@ const VERTICALS: Vertical[] = [
     subtext:
       "From high-converting landing pages to dynamic portfolios, car rentals, and booking showcases.",
     bullets: [
-      "High-speed single-page setups and landing pages",
-      "Dynamic inventory grids (e.g., car fleets, portfolios)",
-      "Direct WhatsApp click-to-chat operational links",
-      "Optimized performance blueprints for maximum reach",
+      "Stunning, fast single-page websites and landing pages",
+      "Clean product displays for car rentals, menus, or portfolios",
+      "Instant WhatsApp buttons for quick customer inquiries",
+      "Google-optimized setups so your site loads instantly on mobile",
       "AI-Powered WhatsApp Auto-Responder Linkages",
     ],
   },
@@ -48,10 +48,10 @@ const VERTICALS: Vertical[] = [
     label: "Hospitality & Nightlife",
     heading: "Fill tables, streamline dining rooms, and automate your revenue.",
     bullets: [
-      "Multi-role table reservations & real-time seat booking engines",
-      "Interactive event ticketing for trivia nights & sports screenings",
-      "High-speed digital menu architectures with QR scan ordering",
-      "Automated M-Pesa Express (STK Push) checkout & deposit webhooks",
+      "Easy online table reservations and seat booking",
+      "Ticketing pages for game nights, trivia, and events",
+      "Digital menus customers can view instantly by scanning a QR code",
+      "Automated M-Pesa deposit collection to secure bookings before arrival",
       "Automated Instagram DM-to-Booking AI Closers",
     ],
     pipeline: [
@@ -68,10 +68,10 @@ const VERTICALS: Vertical[] = [
     subtext:
       "For local shops and makers who have outgrown chasing customers for payments on Instagram.",
     bullets: [
-      "Instant checkout pipelines people trust",
-      "Automated real-time stock counters",
-      "Localized delivery zones and runner assignment hooks",
-      "Sales reporting automated while you sleep",
+      "Clean online checkout setups that customers trust",
+      "Automated systems that track your stock as items sell",
+      "Flexible delivery option selectors built into the checkout",
+      "Smart sales dashboards that run while you sleep",
       "AI Customer Abandoned-Cart Recovery Messages",
     ],
     pipeline: [
@@ -479,12 +479,13 @@ export default function SuperSection() {
               {vertical.subtext && (
                 <p className="text-body-md text-text-secondary mb-5">{vertical.subtext}</p>
               )}
-              <ul className="mt-2 flex flex-col gap-3">
+              <ul className="mt-2 flex flex-col gap-2.5">
                 {vertical.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-surface-2 to-[rgba(245,158,11,0.07)] px-4 py-3.5 text-sm font-semibold text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.25)] hover:border-amber-400 hover:from-[#141008] hover:to-[rgba(245,158,11,0.14)] hover:shadow-[0_0_25px_rgba(245,158,11,0.4)] transition-all duration-300 cursor-default"
+                    className="flex items-center gap-3 rounded-2xl border border-amber-500/10 bg-[#1c1b17] px-4 py-3.5 text-sm font-semibold text-amber-200/75 hover:bg-neutral-800/60 hover:border-amber-500/20 transition-all duration-200 cursor-default"
                   >
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" aria-hidden />
                     {bullet}
                   </li>
                 ))}
