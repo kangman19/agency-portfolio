@@ -45,17 +45,17 @@ const VERTICALS: Vertical[] = [
     id: "hospitality",
     kind: "diagram",
     label: "Hospitality & Nightlife",
-    heading: "Fill tables, screen big matches, and automate your booking flow.",
+    heading: "Fill tables, streamline dining rooms, and automate your revenue.",
     bullets: [
-      "Interactive trivia & event ticket engines",
-      "Automated M-Pesa STK Push checkout webhooks",
-      "Direct QR-code ticket delivery & host check-in dashboards",
-      "High-speed digital menu architectures",
+      "Multi-role table reservations & real-time seat booking engines",
+      "Interactive event ticketing for trivia nights & sports screenings",
+      "High-speed digital menu architectures with QR scan ordering",
+      "Automated M-Pesa Express (STK Push) checkout & deposit webhooks",
     ],
     pipeline: [
-      "Guest Registers for Trivia Team",
-      "M-Pesa STK Push Triggered",
-      "QR Ticket Generated & Logged",
+      "Customer Reserves VIP Table or Event Spot",
+      "M-Pesa STK Deposit Push Instantly Sent & Paid",
+      "Table Locked & Digital Order/Check-In Ticket Issued",
     ],
   },
   {
@@ -480,7 +480,7 @@ export default function SuperSection() {
                 {vertical.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="rounded-2xl bg-surface-2 border border-border px-4 py-3 text-sm font-semibold text-text-secondary hover:border-gold/30 hover:text-text-primary transition-all duration-200"
+                    className="rounded-2xl border border-gold/20 bg-gradient-to-r from-surface-2 to-[rgba(201,169,110,0.05)] px-4 py-3.5 text-sm font-semibold text-text-muted shadow-[0_0_0_1px_rgba(201,169,110,0.07)] hover:border-gold/40 hover:text-text-secondary hover:shadow-[0_0_16px_rgba(201,169,110,0.16)] hover:to-[rgba(201,169,110,0.10)] transition-all duration-300 cursor-default"
                   >
                     {bullet}
                   </li>
