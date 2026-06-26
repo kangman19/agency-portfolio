@@ -6,7 +6,7 @@ import ProcessClosingSection from "@/components/process/ProcessClosingSection";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: `How We Work — ${SITE.name}`,
+  title: `How We Work | ${SITE.name}`,
   description:
     "Five friendly stops from first conversation to launch day. At every step you know exactly what's happening and exactly what you get.",
 };

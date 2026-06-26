@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -54,6 +54,14 @@ export default function Navigation() {
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-8">
+              <Link
+                href="/"
+                prefetch
+                aria-label="Home"
+                className="text-text-secondary hover:text-text-primary transition-colors duration-200"
+              >
+                <Home size={17} strokeWidth={2} />
+              </Link>
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
@@ -101,12 +109,27 @@ export default function Navigation() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 bg-canvas/97 backdrop-blur-xl pt-20 px-6 flex flex-col gap-2 md:hidden"
           >
+            <motion.div
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0 }}
+              className="py-3 border-b border-border"
+            >
+              <Link
+                href="/"
+                prefetch
+                onClick={() => setMenuOpen(false)}
+                className="block text-2xl font-semibold text-text-primary hover:text-gold transition-colors"
+              >
+                Home
+              </Link>
+            </motion.div>
             {navLinks.map((link, i) => (
               <motion.div
                 key={link.label}
                 initial={{ opacity: 0, x: -12 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.07 }}
+                transition={{ delay: (i + 1) * 0.07 }}
                 className="py-3 border-b border-border"
               >
                 <Link

@@ -50,7 +50,7 @@ export default function ProcessClosingSection() {
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.3fr]">
             <div>
               <p className="font-mono text-label text-text-muted uppercase tracking-widest mb-2">
-                Development Phase — Starting Week 2
+                Development Phase, Starting Week 2
               </p>
               <h3 className="text-display-md font-extrabold text-text-primary">
                 A typical week, once we&apos;re building

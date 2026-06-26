@@ -4,7 +4,7 @@ import { SITE } from "@/lib/content";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: `About — ${SITE.name}`,
+  title: `About | ${SITE.name}`,
   description:
     "Astral Agency builds high-performance websites and booking systems engineered for speed, SEO, and measurable revenue. Bridging the gap between operational excellence and digital presence.",
 };
@@ -36,7 +36,7 @@ export default function AboutPage() {
           </p>
         </div>
         <p className="mt-10 text-sm font-semibold text-gold">
-          — Ian Kangethe, Founder
+          Ian Kangethe, Founder
         </p>
       </div>
     </main>

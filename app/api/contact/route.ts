@@ -15,7 +15,7 @@ function row(label: string, value: string) {
   return `
     <tr>
       <td style="padding:10px 0;color:#888;font-size:13px;width:130px;vertical-align:top">${label}</td>
-      <td style="padding:10px 0;font-size:14px;color:#111;vertical-align:top">${value || "—"}</td>
+      <td style="padding:10px 0;font-size:14px;color:#111;vertical-align:top">${value || "N/A"}</td>
     </tr>`;
 }
 
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "kangetheian19@gmail.com",
-      subject: `New enquiry from ${name || "a visitor"} — Astral Agency`,
+      subject: `New enquiry from ${name || "a visitor"} | Astral Agency`,
       html: `
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:32px 24px;background:#fff">
           <div style="margin-bottom:28px">

@@ -189,7 +189,7 @@ function CTABlock() {
           className="text-body-lg text-text-secondary mb-10 max-w-xl mx-auto leading-relaxed"
         >
           One conversation is all it takes to get your business online. Whether you need a
-          premium showcase website, an integrated booking system, or smart AI workflows — we
+          premium showcase website, an integrated booking system, or smart AI workflows. We
           design it completely around your goals. No commitment, no tech jargon.
         </motion.p>
 

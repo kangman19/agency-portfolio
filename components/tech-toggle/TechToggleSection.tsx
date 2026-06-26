@@ -8,7 +8,7 @@ import { useInView, useIsMobile } from "@/lib/utils";
 // ─── Code snippets for Geek View ─────────────────────────────────────────────
 const CODE_SNIPPETS: Record<string, string[]> = {
   performance: [
-    `// next.config.ts — Edge-optimised delivery`,
+    `// next.config.ts | Edge-optimised delivery`,
     `import type { NextConfig } from 'next';`,
     ``,
     `const config: NextConfig = {`,
@@ -25,12 +25,12 @@ const CODE_SNIPPETS: Record<string, string[]> = {
     `// Result: Lighthouse score 98/100 ✓`,
   ],
   security: [
-    `// middleware.ts — Zero-trust security layer`,
+    `// middleware.ts | Zero-trust security layer`,
     `import { NextRequest, NextResponse } from 'next/server';`,
     `import { verifyJWT } from '@/lib/auth';`,
     ``,
     `export async function middleware(req: NextRequest) {`,
-    `  // Rate limiting — 100 req/min per IP`,
+    `  // Rate limiting, 100 req/min per IP`,
     `  const ip = req.headers.get('x-forwarded-for');`,
     `  const limited = await rateLimit(ip);`,
     `  if (limited) return new Response('429', { status: 429 });`,
@@ -45,7 +45,7 @@ const CODE_SNIPPETS: Record<string, string[]> = {
     `}`,
   ],
   database: [
-    `// schema.prisma — Type-safe data layer`,
+    `// schema.prisma | Type-safe data layer`,
     `model Customer {`,
     `  id        String   @id @default(cuid())`,
     `  email     String   @unique`,

@@ -5,9 +5,9 @@ import ContactSection from "@/components/cta/ContactSection";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: `Contact — ${SITE.name}`,
+  title: `Contact | ${SITE.name}`,
   description:
-    "Tell us about your business and we'll tell you what we'd build, for free. One message is all it takes — you'll hear back from the founder within one working day.",
+    "Tell us about your business and we'll tell you what we'd build, for free. One message is all it takes. You'll hear back from the founder within one working day.",
 };
 
 export default function ContactPage() {

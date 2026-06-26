@@ -5,7 +5,7 @@ import ServicesContent from "@/components/services/ServicesContent";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: `Services — ${SITE.name}`,
+  title: `Services | ${SITE.name}`,
   description:
     "High-speed websites, automated A.I booking systems, and local SEO setups engineered to increase revenue for Nairobi businesses.",
 };
