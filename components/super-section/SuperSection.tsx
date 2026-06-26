@@ -39,6 +39,7 @@ const VERTICALS: Vertical[] = [
       "Dynamic inventory grids (e.g., car fleets, portfolios)",
       "Direct WhatsApp click-to-chat operational links",
       "Optimized performance blueprints for maximum reach",
+      "AI-Powered WhatsApp Auto-Responder Linkages",
     ],
   },
   {
@@ -51,6 +52,7 @@ const VERTICALS: Vertical[] = [
       "Interactive event ticketing for trivia nights & sports screenings",
       "High-speed digital menu architectures with QR scan ordering",
       "Automated M-Pesa Express (STK Push) checkout & deposit webhooks",
+      "Automated Instagram DM-to-Booking AI Closers",
     ],
     pipeline: [
       "Customer Reserves VIP Table or Event Spot",
@@ -70,6 +72,7 @@ const VERTICALS: Vertical[] = [
       "Automated real-time stock counters",
       "Localized delivery zones and runner assignment hooks",
       "Sales reporting automated while you sleep",
+      "AI Customer Abandoned-Cart Recovery Messages",
     ],
     pipeline: [
       "Customer Checks Out",
@@ -480,7 +483,7 @@ export default function SuperSection() {
                 {vertical.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="rounded-2xl border border-gold/20 bg-gradient-to-r from-surface-2 to-[rgba(201,169,110,0.05)] px-4 py-3.5 text-sm font-semibold text-text-muted shadow-[0_0_0_1px_rgba(201,169,110,0.07)] hover:border-gold/40 hover:text-text-secondary hover:shadow-[0_0_16px_rgba(201,169,110,0.16)] hover:to-[rgba(201,169,110,0.10)] transition-all duration-300 cursor-default"
+                    className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-surface-2 to-[rgba(245,158,11,0.07)] px-4 py-3.5 text-sm font-semibold text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.25)] hover:border-amber-400 hover:from-[#141008] hover:to-[rgba(245,158,11,0.14)] hover:shadow-[0_0_25px_rgba(245,158,11,0.4)] transition-all duration-300 cursor-default"
                   >
                     {bullet}
                   </li>
